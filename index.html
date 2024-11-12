@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Calculadora de IMC</title>
+  </head>
+  <body>
+    <main id="container">
+      <div id="matrix-init">
+        <section id="matrix-config">
+          <div>
+            <h1 id="title">Escalonador de Matrizes</h1>
+            <label for="rows" id="input-text">Linhas:</label>
+            <input type="number" id="rows" min="1" max="10" required />
+            <label for="columns" id="input-text">Colunas:</label>
+            <input type="number" id="columns" min="1" max="10" required />
+          </div>
+          <button id="generate-matrix" class="button">Gerar Matriz</button>
+        </section>
+
+        <section id="matrix-input" class="hidden">
+          <form id="matrix-form">
+            <div id="matrix-container"></div>
+            <button type="submit" id="escalonar" class="button" >Escalonar</button>
+          </form>
+        </section>
+      </div>
+
+      <section id="result" class="hidden">
+        <h2>Matriz Escalonada:</h2>
+        <div id="escalonated-matrix"></div>
+      </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
