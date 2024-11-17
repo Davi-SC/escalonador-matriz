@@ -6,12 +6,10 @@ document
 
     if (rows > 0 && columns > 0) {
       const matrixContainer = document.getElementById("matrix-container");
-      matrixContainer.innerHTML = ""; // Limpa a matriz anterior
+      matrixContainer.innerHTML = "";
 
-      // Ajusta o grid para o tamanho da matriz
       matrixContainer.style.gridTemplateColumns = `repeat(${columns}, 60px)`;
 
-      // Gera os campos de entrada
       for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns; j++) {
           const input = document.createElement("input");
@@ -34,7 +32,6 @@ document
     const columns = parseInt(document.getElementById("columns").value);
     const matrix = [];
 
-    // Lê os valores da matriz
     for (let i = 0; i < rows; i++) {
       const row = [];
       for (let j = 0; j < columns; j++) {
@@ -71,13 +68,18 @@ function displayMatrix(matrix) {
   const resultContainer = document.getElementById("escalonated-matrix");
   resultContainer.innerHTML = "";
 
-  matrix.forEach((row) => {
+  matrix.forEach(row => {
     const rowDiv = document.createElement("div");
-    row.forEach((value) => {
+
+    row.forEach(value => {
       const cell = document.createElement("span");
       cell.textContent = value.toFixed(2);
+      if (value === 0) {
+        cell.style.color = "gray"; // Cor para zeros
+      } 
       rowDiv.appendChild(cell);
     });
+
     resultContainer.appendChild(rowDiv);
   });
 
